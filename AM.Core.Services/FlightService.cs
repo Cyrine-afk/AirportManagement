@@ -35,6 +35,17 @@ namespace AM.Core.Services
                     }
                     break;
 
+                case "Departure":
+                    foreach (Flight flight in Flights)
+                    {
+                        if (flight.Departure == filterValue)
+                        {
+                            Console.WriteLine(flight.MyPlane);
+                        }
+
+                    }
+                    break;
+
                 case "FlightDate":
                     foreach (Flight flight in Flights)
                     {
@@ -48,6 +59,15 @@ namespace AM.Core.Services
                     foreach (Flight flight in Flights)
                     {
                         if (flight.EffectiveArrival == DateTime.Parse(filterValue))
+                            Console.WriteLine(flight.MyPlane);
+
+                    }
+                    break;
+
+                case "EstimatedDuration":
+                    foreach (Flight flight in Flights)
+                    {
+                        if (flight.EstimatedDuration == int.Parse(filterValue))
                             Console.WriteLine(flight.MyPlane);
 
                     }
