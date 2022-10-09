@@ -19,11 +19,47 @@ namespace AM.Core.Services
                 .ToList();
         }
 
-        public IList<Flight> GetFlights(string filterType, string filterValue)
+        //Question 5
+        public void GetFlights(string filterType, string filterValue)
         {
-            return Flights.Where(fType => fType.Get )
-                .Select()
-                .ToList();
+            switch (filterType)
+            {
+                case "Destination":
+                    foreach (Flight flight in Flights)
+                    {
+                        if (flight.Destination == filterValue)
+                        {
+                            Console.WriteLine(flight.MyPlane);
+                        }
+
+                    }
+                    break;
+
+                case "FlightDate":
+                    foreach (Flight flight in Flights)
+                    {
+                        if (flight.FlightDate == DateTime.Parse(filterValue))
+                            Console.WriteLine(flight.MyPlane);
+
+                    }
+                    break;
+
+                case "EffectiveArrival":
+                    foreach (Flight flight in Flights)
+                    {
+                        if (flight.EffectiveArrival == DateTime.Parse(filterValue))
+                            Console.WriteLine(flight.MyPlane);
+
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Attribut non existant, reessayez");
+                    break;
+
+
+            }
+
         }
     }
 }

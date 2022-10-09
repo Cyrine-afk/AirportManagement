@@ -15,6 +15,5 @@ namespace AM.Core.Services
         /// <param name="destination"></param>
         /// <returns></returns>
         IList<DateTime> GetFlightDates(String destination);
-        IList<Flight> GetFlights(string filterType, string filterValue);
     }
 }

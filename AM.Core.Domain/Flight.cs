@@ -19,7 +19,7 @@ namespace AM.Core.Domain
 
         public Plane MyPlane { get; set; }
         public ICollection<Passenger> Passengers { get; set; }
-        
+
         public override string ToString()
         {
             return "Destination:" + Destination +
