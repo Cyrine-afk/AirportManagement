@@ -12,6 +12,7 @@ namespace AM.Core.Services
     {
         public IList<Flight> Flights { get; set; }
 
+        //Question 4 + 6
         public IList<DateTime> GetFlightDates(string destination)
         {
             return Flights.Where(f => f.Destination == destination)
@@ -74,12 +75,53 @@ namespace AM.Core.Services
                     break;
 
                 default:
-                    Console.WriteLine("Attribut non existant, reessayez");
+                    Console.WriteLine("Attribut non-existant, réessayez");
                     break;
 
 
             }
 
+        }
+
+        //Question 7
+        public void ShowFlightDetails(Plane myplane)
+        {
+            Flights.Where(f => f.MyPlane == myplane)
+                .Select(f => f.Destination + f.FlightDate);
+        }
+
+        //Question 8
+        public int GetWeeklyFlightNumber(DateTime dateflight)
+        {
+            return Flights.Where(f => f.FlightDate >= dateflight && (f.FlightDate - dateflight).TotalDays <= 7)
+                .Count();
+        }
+
+        //Question 9
+        public double GetDurationAverage(string destination)
+        {
+            return Flights.Where(f => f.Destination == destination)
+                .Average(f => f.EstimatedDuration);
+        }
+
+        //Question 10
+        public IList<Flight> SortFlights()
+        {
+            return Flights.OrderByDescending(f => f.EstimatedDuration)
+                .ToList();
+        }
+
+        //Question 11
+        public void GetThreeOlderTravellers(Flight givenflight)
+        {
+            //return Flights.Where(givenflight.Passengers.)
+        }
+
+        //Question 12
+        public IList<Flight> ShowGroupedFlights()
+        {
+            return (IList<Flight>)Flights.GroupBy(f => f.Destination)
+                .ToList();
         }
     }
 }
