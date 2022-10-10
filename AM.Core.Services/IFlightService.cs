@@ -9,6 +9,9 @@ namespace AM.Core.Services
 {
     public interface IFlightService
     {
+
+        delegate int GetScore(Passenger passenger);
+
         /// <summary>
         /// retourne la liste des dates de vols pour une destination donnée
         /// </summary>
@@ -16,12 +19,12 @@ namespace AM.Core.Services
         /// <returns></returns>
         IList<DateTime> GetFlightDates(String destination);
 
-        public IList<Passenger> GetThreeOlderTravellers(Flight flight)
-        {
-            return flight.Passengers.OfType<Traveller>()
-                .OrderByDescending(p => p.Age)
-                .Take(3)
-                .ToList();
-        }
+        IList<Flight> SortFlights();
+
+        IList<Passenger> GetThreeOlderTravellers(Flight flight);
+
+        void ShowGroupedFlights();
+
+        Passenger GetSeniorPassenger(GetScore methode);
     }
 }

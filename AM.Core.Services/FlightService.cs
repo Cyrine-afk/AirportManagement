@@ -111,12 +111,36 @@ namespace AM.Core.Services
                 .ToList();
         }
 
+        //Question 11
+        public IList<Passenger> GetThreeOlderTravellers(Flight flight)
+        {
+            return flight.Passengers.OfType<Traveller>()
+                .OrderByDescending(p => p.Age)
+                .Take(3)
+                .ToList<Passenger>();
+        }
 
         //Question 12
-        public IList<Flight> ShowGroupedFlights()
+        public void ShowGroupedFlights()
         {
-            return (IList<Flight>)Flights.GroupBy(f => f.Destination)
-                .ToList();
+            var result = from f in Flights
+                         group f by f.Destination; //Destination is the key
+            foreach(var group in result)
+            {
+                Console.WriteLine(group.Key);
+                foreach(var f in group) //group est la propriété qui permet de retourner les listes
+                {
+                    Console.WriteLine(f);
+                }
+            }
+        }
+
+        public Passenger GetSeniorPassenger(IFlightService.GetScore methode)
+        {
+            return (from f in Flights
+                   from p in f.Passengers
+                   orderby methode(p) descending
+                   select p).First();
         }
     }
 }
