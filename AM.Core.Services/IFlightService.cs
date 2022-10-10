@@ -15,5 +15,13 @@ namespace AM.Core.Services
         /// <param name="destination"></param>
         /// <returns></returns>
         IList<DateTime> GetFlightDates(String destination);
+
+        public IList<Passenger> GetThreeOlderTravellers(Flight flight)
+        {
+            return flight.Passengers.OfType<Traveller>()
+                .OrderByDescending(p => p.Age)
+                .Take(3)
+                .ToList();
+        }
     }
 }

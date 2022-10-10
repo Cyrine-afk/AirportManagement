@@ -111,11 +111,6 @@ namespace AM.Core.Services
                 .ToList();
         }
 
-        //Question 11
-        public void GetThreeOlderTravellers(Flight givenflight)
-        {
-            //return Flights.Where(givenflight.Passengers.)
-        }
 
         //Question 12
         public IList<Flight> ShowGroupedFlights()
