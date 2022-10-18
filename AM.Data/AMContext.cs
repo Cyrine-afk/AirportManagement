@@ -1,6 +1,5 @@
 ﻿using AM.Core.Domain;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Tools;
 
 namespace AM.Data
 {
@@ -18,7 +17,6 @@ namespace AM.Data
                                         Initial Catalog = Airport;
                                         Integrated Security = true");
         }
-
 
     }
 }
