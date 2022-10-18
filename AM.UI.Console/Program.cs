@@ -3,8 +3,10 @@
 
 using AM.Core.Domain;
 using AM.Core.Services;
+using AM.Core.Extentions;
 using System.ComponentModel.DataAnnotations;
 using static AM.Core.Services.IFlightService;
+using AM.Core.Extentions;
 
 //Plane p1 = new Plane();
 //p1.Capacity = 200;
@@ -68,16 +70,24 @@ using static AM.Core.Services.IFlightService;
 ////Testing question 14
 //Console.WriteLine("L'âge est: " + pas3.Age + " ans");
 
-GetScore meth1 = delegate(Passenger p)
-{
-    return p.Flights.Count();
-};
-GetScore meth2 = delegate(Passenger p)
-{
-    return p.Flights.Where(f => f.Destination == "Tunisie" || f.Departure == "Tunisie")
-    .Count();
-}; 
+//GetScore meth1 = delegate(Passenger p)
+//{
+//    return p.Flights.Count();
+//};
+//GetScore meth2 = delegate(Passenger p)
+//{
+//    return p.Flights.Where(f => f.Destination == "Tunisie" || f.Departure == "Tunisie")
+//    .Count();
+//}; 
 
-IFlightService flightService = new FlightService();
-Passenger passengerSenior = flightService.GetSeniorPassenger(meth1);
+//IFlightService flightService = new FlightService();
+//Passenger passengerSenior = flightService.GetSeniorPassenger(meth1);
+
+Flight flight = new Flight()
+{
+    FlightDate = new DateTime(2022, 10, 18, 7, 0, 0),
+    EstimatedDuration = 120,
+    EffectiveArrival = new DateTime(2022, 10, 18, 9, 20, 0)
+};
+Console.WriteLine(flight.GetDelay());
 
