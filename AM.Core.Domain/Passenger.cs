@@ -15,6 +15,7 @@ namespace AM.Core.Domain
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string TelNumber { get; set; }
+        public int Id { get; set; }
 
         //Question 14
         public int Age
