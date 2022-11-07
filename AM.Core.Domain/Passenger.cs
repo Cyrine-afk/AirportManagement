@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -9,12 +10,28 @@ namespace AM.Core.Domain
 {
     public class Passenger
     {
-        public DateTime BirthDate { get; set; }
+        //these are annotations
+        [Key] //indique clé primaire
+        [MaxLength(7, ErrorMessage = "Error, maximal length is 7")] //defining max length
+        [MinLength(7, ErrorMessage = "Error, minimal length is 7")] //defining min length
         public string PassportNumber { get; set; }
+
+        [DataType(DataType.DateTime, ErrorMessage ="Error, DateTime")]//n'accepte que le type datetime en entrée
+        [Display(Name ="Date of Birth")]//affichage "Date of Birth"
+        public DateTime BirthDate { get; set; }
+
+        [DataType(DataType.EmailAddress, ErrorMessage ="Error, EmailAddress")]
         public string EmailAddress { get; set; }
+
+        [MaxLength(25, ErrorMessage = "Error, maximal length is 25")] //defining max length
+        [MinLength(3, ErrorMessage = "Error, minimal length is 3")] //defining min length
         public string FirstName { get; set; }
+
         public string LastName { get; set; }
+
+        [DataType(DataType.PhoneNumber, ErrorMessage = "Error, PhoneNumber")]
         public string TelNumber { get; set; }
+
         public int Id { get; set; }
 
         //Question 14
