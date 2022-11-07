@@ -30,6 +30,10 @@ namespace AM.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FlightId"), 1L, 1);
 
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Departure")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -54,7 +58,7 @@ namespace AM.Data.Migrations
 
                     b.HasIndex("MyPlanePlaneId");
 
-                    b.ToTable("Flights");
+                    b.ToTable("Flights", (string)null);
                 });
 
             modelBuilder.Entity("AM.Core.Domain.Passenger", b =>
@@ -94,7 +98,7 @@ namespace AM.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Passengers");
+                    b.ToTable("Passengers", (string)null);
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Passenger");
                 });
@@ -118,7 +122,7 @@ namespace AM.Data.Migrations
 
                     b.HasKey("PlaneId");
 
-                    b.ToTable("Planes");
+                    b.ToTable("Planes", (string)null);
                 });
 
             modelBuilder.Entity("FlightPassenger", b =>
@@ -133,7 +137,7 @@ namespace AM.Data.Migrations
 
                     b.HasIndex("PassengersId");
 
-                    b.ToTable("FlightPassenger");
+                    b.ToTable("FlightPassenger", (string)null);
                 });
 
             modelBuilder.Entity("AM.Core.Domain.Staff", b =>

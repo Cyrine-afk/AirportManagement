@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tâche-AM",
+      "appliesTo": "AM.Data/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "tâche-AM",
+      "appliesTo": "AM.Data/",
+      "type": "launch"
+    }
+  ]
+}

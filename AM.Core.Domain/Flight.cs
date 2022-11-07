@@ -16,6 +16,7 @@ namespace AM.Core.Domain
         public int FlightId { get; set; }
         public DateTime EffectiveArrival { get; set; }
         public int EstimatedDuration { get; set; }
+        public String Comments { get; set; }
 
         public Plane MyPlane { get; set; }
         public ICollection<Passenger> Passengers { get; set; }

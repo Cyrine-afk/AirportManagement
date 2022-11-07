@@ -7,6 +7,7 @@ using AM.Core.Extentions;
 using System.ComponentModel.DataAnnotations;
 using static AM.Core.Services.IFlightService;
 using AM.Core.Extentions;
+using AM.Data;
 
 //Plane p1 = new Plane();
 //p1.Capacity = 200;
@@ -87,7 +88,15 @@ Flight flight = new Flight()
 {
     FlightDate = new DateTime(2022, 10, 18, 7, 0, 0),
     EstimatedDuration = 120,
-    EffectiveArrival = new DateTime(2022, 10, 18, 9, 20, 0)
+    EffectiveArrival = new DateTime(2022, 10, 18, 9, 20, 0),
+    Comments = "Comment"
 };
-Console.WriteLine(flight.GetDelay());
+//Console.WriteLine(flight.GetDelay());
+
+Plane plane = new Plane();
+
+AMContext context = new AMContext();
+context.Planes.Add(plane);
+//context.Flights.Add(flight);
+context.SaveChanges();
 
