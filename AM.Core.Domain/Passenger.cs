@@ -32,7 +32,6 @@ namespace AM.Core.Domain
         [DataType(DataType.PhoneNumber, ErrorMessage = "Error, PhoneNumber")]
         public string TelNumber { get; set; }
 
-        public int Id { get; set; }
 
         //Question 14
         public int Age

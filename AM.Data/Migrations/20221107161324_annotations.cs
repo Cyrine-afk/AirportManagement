@@ -33,6 +33,10 @@ namespace AM.Data.Migrations
                 table: "FlightPassenger");
 
             migrationBuilder.DropColumn(
+                name: "Id",
+                table: "Passengers");
+
+            migrationBuilder.DropColumn(
                 name: "MyPlanePlaneId",
                 table: "Flights");
 
@@ -62,15 +66,6 @@ namespace AM.Data.Migrations
                 nullable: false,
                 oldClrType: typeof(string),
                 oldType: "nvarchar(max)");
-
-            migrationBuilder.AlterColumn<int>(
-                name: "Id",
-                table: "Passengers",
-                type: "int",
-                nullable: false,
-                oldClrType: typeof(int),
-                oldType: "int")
-                .OldAnnotation("SqlServer:Identity", "1, 1");
 
             migrationBuilder.AddColumn<int>(
                 name: "PlaneId",
@@ -160,15 +155,6 @@ namespace AM.Data.Migrations
                 table: "Flights",
                 newName: "Comment");
 
-            migrationBuilder.AlterColumn<int>(
-                name: "Id",
-                table: "Passengers",
-                type: "int",
-                nullable: false,
-                oldClrType: typeof(int),
-                oldType: "int")
-                .Annotation("SqlServer:Identity", "1, 1");
-
             migrationBuilder.AlterColumn<string>(
                 name: "FirstName",
                 table: "Passengers",
@@ -186,6 +172,14 @@ namespace AM.Data.Migrations
                 oldClrType: typeof(string),
                 oldType: "nvarchar(7)",
                 oldMaxLength: 7);
+
+            migrationBuilder.AddColumn<int>(
+                name: "Id",
+                table: "Passengers",
+                type: "int",
+                nullable: false,
+                defaultValue: 0)
+                .Annotation("SqlServer:Identity", "1, 1");
 
             migrationBuilder.AddColumn<int>(
                 name: "MyPlanePlaneId",
