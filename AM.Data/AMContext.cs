@@ -26,5 +26,11 @@ namespace AM.Data
             modelBuilder.ApplyConfiguration(new PassengerConfig());
         }
 
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.Properties<DateTime>()
+                .HaveColumnType("date");
+        }
+
     }
 }
