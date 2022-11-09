@@ -10,6 +10,16 @@
       "taskLabel": "tâche-AM",
       "appliesTo": "AM.Data/",
       "type": "launch"
+    },
+    {
+      "taskLabel": "tâche-AM",
+      "appliesTo": "AM.Data/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "tâche-AM",
+      "appliesTo": "AM.Data/",
+      "type": "launch"
     }
   ]
 }

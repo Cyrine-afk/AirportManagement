@@ -23,15 +23,16 @@ namespace AM.Core.Domain
         [DataType(DataType.EmailAddress, ErrorMessage ="Error, EmailAddress")]
         public string EmailAddress { get; set; }
 
-        [MaxLength(25, ErrorMessage = "Error, maximal length is 25")] //defining max length
-        [MinLength(3, ErrorMessage = "Error, minimal length is 3")] //defining min length
-        public string FirstName { get; set; }
+        //[MaxLength(25, ErrorMessage = "Error, maximal length is 25")] //defining max length
+        //[MinLength(3, ErrorMessage = "Error, minimal length is 3")] //defining min length
+        //public string FirstName { get; set; }
 
-        public string LastName { get; set; }
+        //public string LastName { get; set; }
 
         [DataType(DataType.PhoneNumber, ErrorMessage = "Error, PhoneNumber")]
         public string TelNumber { get; set; }
 
+        public FullName MyFullName { get; set; }
 
         //Question 14
         public int Age
@@ -60,8 +61,8 @@ namespace AM.Core.Domain
             BirthDate = birthDate;
             PassportNumber = passportNumber;
             EmailAddress = emailAddress;
-            FirstName = firstName;
-            LastName = lastName;
+            MyFullName.FirstName = firstName;
+            MyFullName.LastName = lastName;
             TelNumber = telNumber;
             Flights = flights;
         }
@@ -91,8 +92,8 @@ namespace AM.Core.Domain
             //    && LastName == lastname
             //    && EmailAddress == emailaddress;
 
-            return FirstName == firstname
-                && LastName == lastname
+            return MyFullName.FirstName == firstname
+                && MyFullName.LastName == lastname
                 && (emailaddress == null || EmailAddress == emailaddress);
         }
 
@@ -128,8 +129,8 @@ namespace AM.Core.Domain
             return "BirthDate:"+BirthDate+
                 ", PassportNumber: "+ PassportNumber+
                 ", EmailAddress: "+ EmailAddress+
-                ", FirstName: "+ FirstName+
-                ", LastName: "+ LastName+
+                ", FirstName: "+ MyFullName.FirstName+
+                ", LastName: "+ MyFullName.LastName+
                 ", TelNumber: "+ TelNumber;
         }
     }
