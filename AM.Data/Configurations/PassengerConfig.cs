@@ -22,10 +22,10 @@ namespace AM.Data.Configurations
                 .Property(f => f.LastName)
                 .IsRequired();
 
-            builder.HasDiscriminator("IsTraveller", typeof(int))
-                .HasValue<Passenger>(0)
-                .HasValue<Traveller>(1)
-                .HasValue<Staff>(2);
+            //builder.HasDiscriminator("IsTraveller", typeof(int))
+            //    .HasValue<Passenger>(0)
+            //    .HasValue<Traveller>(1)
+            //    .HasValue<Staff>(2);
 
         }
     }

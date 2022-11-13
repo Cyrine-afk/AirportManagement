@@ -100,3 +100,52 @@ context.Planes.Add(plane);
 //context.Flights.Add(flight);
 context.SaveChanges();
 
+Passenger passenger = new Passenger()
+{
+    BirthDate = new DateTime(2000, 1, 1),
+    PassportNumber = "1234567",
+    EmailAddress = "passenger@gmail.com",
+    MyFullName = new FullName()
+    {
+        FirstName = "Passenger",
+        LastName = "Passenger TN"
+    },
+    TelNumber = "96069516"
+};
+
+Traveller traveller = new Traveller()
+{
+    BirthDate = new DateTime(2000, 1, 1),
+    PassportNumber = "1234566",
+    EmailAddress = "traveller@gmail.com",
+    MyFullName = new FullName()
+    {
+        FirstName = "Traveller",
+        LastName = "Traveller TN"
+    },
+    TelNumber = "96069516",
+    HealthInformation = "",
+    Nationality = "Tunisian"
+};
+
+Staff staff = new Staff()
+{
+    BirthDate = new DateTime(2000, 1, 1),
+    PassportNumber = "1234565",
+    EmailAddress = "staff@gmail.com",
+    MyFullName = new FullName()
+    {
+        FirstName = "Staff",
+        LastName = "Staff TN"
+    },
+    TelNumber = "96069516",
+    Salary = 10.2,
+    Function = "Captain"    
+};
+
+AMContext context2 = new AMContext();
+context2.Passengers.Add(passenger);
+context2.Passengers.Add(staff);
+context2.Passengers.Add(traveller);
+context2.SaveChanges();
+
