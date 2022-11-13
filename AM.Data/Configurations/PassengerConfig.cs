@@ -21,6 +21,12 @@ namespace AM.Data.Configurations
             builder.OwnsOne(p => p.MyFullName)
                 .Property(f => f.LastName)
                 .IsRequired();
+
+            builder.HasDiscriminator("IsTraveller", typeof(int))
+                .HasValue<Passenger>(0)
+                .HasValue<Traveller>(1)
+                .HasValue<Staff>(2);
+
         }
     }
 }
