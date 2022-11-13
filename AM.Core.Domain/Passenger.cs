@@ -50,6 +50,7 @@ namespace AM.Core.Domain
             }
         }
         public ICollection<Flight> Flights { get; set; }
+        public ICollection<Reservation> Reservations { get; set; }
 
         public Passenger()
         {

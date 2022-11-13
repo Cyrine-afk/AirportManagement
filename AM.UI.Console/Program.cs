@@ -140,7 +140,7 @@ Staff staff = new Staff()
     },
     TelNumber = "96069516",
     Salary = 10.2,
-    Function = "Captain"    
+    Function = "Captain"
 };
 
 AMContext context2 = new AMContext();
@@ -148,4 +148,3 @@ context2.Passengers.Add(passenger);
 context2.Passengers.Add(staff);
 context2.Passengers.Add(traveller);
 context2.SaveChanges();
-
