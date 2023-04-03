@@ -11,27 +11,22 @@ namespace AM.Core.Domain
 {
     public class Flight
     {
-        //Clé étrangère
+        public string Destination { get; set; }
+        public string Departure { get; set; }
+        public DateTime FlightDate { get; set; }
+        public int FlightId { get; set; }
+        public DateTime EffectiveArrival { get; set; }
+        public int EstimatedDuration { get; set; }
+
+        //2éme altérnative [ForeignKey("PlaneId")]
+        public virtual Plane? MyPlane { get; set; }
+
         [ForeignKey("MyPlane")]
         public int? PlaneId { get; set; }
+        //public ICollection<Passenger> Passengers { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
 
-        public string Destination { get; set; }
-
-        public string Departure { get; set; }
-        
-        public DateTime FlightDate { get; set; }
-        
-        public int FlightId { get; set; }
-        
-        public DateTime EffectiveArrival { get; set; }
-        
-        public int EstimatedDuration { get; set; }
-        
-        public String Comments { get; set; }
-
-        public Plane? MyPlane { get; set; }
-        public ICollection<Passenger> Passengers { get; set; }
-        public ICollection<Reservation> Reservations { get; set; }
+        public string Comment { get; set; }
 
         public override string ToString()
         {

@@ -13,8 +13,8 @@ namespace AM.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Plane> builder)
         {
-            builder.ToTable("MyPlanes").HasKey(p => p.PlaneId);
-            builder.Property(p => p.Capacity).HasColumnName("PlaneCapacity");
+            builder.ToTable("MyPlanes").HasKey(p => p.PlaneId) ;
+            builder.Property(p => p.Capacity).HasColumnName("PlaneCapacity");        
         }
     }
 }

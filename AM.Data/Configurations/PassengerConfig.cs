@@ -13,19 +13,21 @@ namespace AM.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Passenger> builder)
         {
-            builder.OwnsOne(p => p.MyFullName) 
+            builder.OwnsOne(p => p.MyFullName)
                 .Property(f => f.FirstName)
                 .HasColumnName("Name")
-                .HasMaxLength(25);
+                .HasMaxLength(30);
 
             builder.OwnsOne(p => p.MyFullName)
-                .Property(f => f.LastName)
-                .IsRequired();
+               .Property(f => f.LastName)
+               .IsRequired();
 
             //builder.HasDiscriminator("IsTraveller", typeof(int))
             //    .HasValue<Passenger>(0)
             //    .HasValue<Traveller>(1)
             //    .HasValue<Staff>(2);
+
+
 
         }
     }

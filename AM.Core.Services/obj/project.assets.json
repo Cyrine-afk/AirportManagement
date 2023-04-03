@@ -11,6 +11,16 @@
         "runtime": {
           "bin/placeholder/AM.Core.Domain.dll": {}
         }
+      },
+      "AM.Core.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/AM.Core.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AM.Core.Interfaces.dll": {}
+        }
       }
     }
   },
@@ -19,11 +29,17 @@
       "type": "project",
       "path": "../AM.Core.Domain/AM.Core.Domain.csproj",
       "msbuildProject": "../AM.Core.Domain/AM.Core.Domain.csproj"
+    },
+    "AM.Core.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../AM.Core.Interfaces/AM.Core.Interfaces.csproj",
+      "msbuildProject": "../AM.Core.Interfaces/AM.Core.Interfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "AM.Core.Domain >= 1.0.0"
+      "AM.Core.Domain >= 1.0.0",
+      "AM.Core.Interfaces >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -33,11 +49,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement\\AM.Core.Services\\AM.Core.Services.csproj",
+      "projectUniqueName": "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement (4)\\AirportManagement (2)\\AirportManagement\\AirportManagement\\AM.Core.Services\\AM.Core.Services.csproj",
       "projectName": "AM.Core.Services",
-      "projectPath": "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement\\AM.Core.Services\\AM.Core.Services.csproj",
+      "projectPath": "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement (4)\\AirportManagement (2)\\AirportManagement\\AirportManagement\\AM.Core.Services\\AM.Core.Services.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement\\AM.Core.Services\\obj\\",
+      "outputPath": "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement (4)\\AirportManagement (2)\\AirportManagement\\AirportManagement\\AM.Core.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,8 +75,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement\\AM.Core.Domain\\AM.Core.Domain.csproj": {
-              "projectPath": "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement\\AM.Core.Domain\\AM.Core.Domain.csproj"
+            "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement (4)\\AirportManagement (2)\\AirportManagement\\AirportManagement\\AM.Core.Domain\\AM.Core.Domain.csproj": {
+              "projectPath": "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement (4)\\AirportManagement (2)\\AirportManagement\\AirportManagement\\AM.Core.Domain\\AM.Core.Domain.csproj"
+            },
+            "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement (4)\\AirportManagement (2)\\AirportManagement\\AirportManagement\\AM.Core.Interfaces\\AM.Core.Interfaces.csproj": {
+              "projectPath": "D:\\4ème_GL_ESPRIT\\.NET\\AirportManagement (4)\\AirportManagement (2)\\AirportManagement\\AirportManagement\\AM.Core.Interfaces\\AM.Core.Interfaces.csproj"
             }
           }
         }

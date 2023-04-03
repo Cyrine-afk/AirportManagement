@@ -9,16 +9,13 @@ namespace AM.Core.Domain
 {
     public class Reservation
     {
-        //Clé primaire
-        [Key]
+        
         public int FlightId { get; set; }
-
         //Clés étrangères
         public String PassengerId { get; set; }
-        public Passenger MyPassenger { get; set; }
-        public Flight MyFlight { get; set; }
+        public virtual Passenger MyPassenger { get; set; }
+        public virtual Flight MyFlight { get; set; }
 
-        //Attributs
         public double Price { get; set; }
         public String Seat { get; set; }
         public bool VIP { get; set; }
